@@ -12,5 +12,3 @@
     - [3.5. Iniciativas Extras - Padrões de Projeto](/PadroesDeProjeto/3.5.IniciativasExtras.md)
     - [3.6. API - Route](/PadroesDeProjeto/3.6.API.md)
     - [3.7. Reunioes - Padrões de Projeto](/PadroesDeProjeto/3.7.Reunioes.md)        
-      
-PadroesDeProjeto/3.6 API.md
