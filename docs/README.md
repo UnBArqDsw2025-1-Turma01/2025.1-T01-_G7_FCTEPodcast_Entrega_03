@@ -22,9 +22,6 @@
 
 O FTCEPodcast é uma plataforma digital voltada à comunidade da FCTE, com o objetivo de promover a difusão de conhecimento por meio de podcasts educacionais. Disponível em versão web, o software permite a publicação e o acesso a conteúdos produzidos por docentes, monitores e convidados, abordando tópicos relevantes de diferentes disciplinas. A ferramenta visa fortalecer a aprendizagem colaborativa, incentivar o protagonismo acadêmico e facilitar o compartilhamento de saberes dentro e fora do ambiente institucional.
 
-## Screenshots da Primeira Entrega
-Adicione 2 ou mais screenshots em termos de artefatos realizados na entrega.
-
 ## Há algo a ser executado?
 
 ( X ) SIM
@@ -141,3 +138,4 @@ Quaisquer outras informações adicionais podem ser descritas nessa seção.
 
 | Versão |    Data    |        Descrição         |    Autor(es)    |  Revisor(es)     |  Detalhes da Revisão  |  
 | :----: | :--------: | :----------------------: | :-------------: | :----------------| :---------------------|
+|  1.0   | 31/05/2025 |   Criação do documento   | Natália Rodrigues | Harleny A. | texto revisado |
