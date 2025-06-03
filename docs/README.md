@@ -61,47 +61,44 @@ A seguir estão os passos para rodar as telas iniciais do projeto **FCTEPodcast*
 ### ✅ Pré-requisitos
 
 - 🐳 **Docker Compose** (ou `docker-compose`)
-- ✉️ **Conta no [Resend](https://resend.com/)** (para envio de e-mails)
 
 ---
 
 ### 🌱 Etapas iniciais
 
-1. Acesse a branch `feat--cadastro-de-usuarios`:
+## Configuração de Variáveis de Ambiente
 
-```bash
-git checkout feat--cadastro-de-usuarios
-```
+Crie dois arquivos na raiz do repositório `2025.1-T01-_G7_FCTEPodcast`:
 
-2. Navegue até a pasta principal do projeto:
+- `.env`  
+- `.env.dev`
 
-```bash
-cd FCTEPodcast
-```
-
-3. Crie um arquivo `.env` na mesma pasta onde está localizado o `docker-compose.dev.yaml` e adicione as seguintes variáveis de ambiente:
+Adicione as seguintes variáveis de ambiente em **ambos os arquivos**:
 
 ```env
-# API CONFIG
-API_PORT=3007
-RESEND_API_KEY=
-MONGO_URL=mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@db:27017/
-FRONTEND_URL=http://localhost:5173
+# configuracao da API
+API_PORT=3008
+API_HOST=http://localhost
+CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost
+# tokens
+JWT_SECRET_KEY=supersecretkey
+JWT_REFRESH_SECRET_KEY=supersecretrefreshkey
 
-# DB CONFIG
+# configuracao do banco de dados
 MONGO_INITDB_ROOT_USERNAME=root
-MONGO_INITDB_ROOT_PASSWORD=admin123
-MONGO_INITDB_DATABASE=fctepodcast
+MONGO_INITDB_ROOT_PASSWORD=admin
+MONGO_URL=mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@fctepocast-db:27017/
 
-# JWT CONFIG
-JWT_SECRET=your_jwt_secret
 
-# CORS
-CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+# configuracao do frontend
+VITE_BASE_API_URL=http://localhost:3008/api
 
-# FRONTEND
-VITE_API_URL=http://localhost:${API_PORT}
 ```
+
+> ⚠️ Substitua os valores conforme o ambiente de desenvolvimento ou produção.
+
+Esses arquivos são essenciais para configurar o comportamento da aplicação de acordo com o ambiente em que está sendo executada, garantindo maior segurança e flexibilidade.
+Lembre-se de não versionar esses arquivos em sistemas de controle de versão (como o Git), adicionando-os ao .gitignore caso ainda não estejam.
 
 ---
 
@@ -126,7 +123,7 @@ docker-compose -f docker-compose.dev.yaml up -d --build
 Após a execução, o sistema estará disponível nas portas definidas. Verifique se o frontend está acessível em:  
 🔗 `http://localhost:5173`  
 E a API em:  
-🔗 `http://localhost:3007`
+🔗 `http://localhost:3008`
 
 
 
@@ -139,3 +136,4 @@ Quaisquer outras informações adicionais podem ser descritas nessa seção.
 | Versão |    Data    |        Descrição         |    Autor(es)    |  Revisor(es)     |  Detalhes da Revisão  |  
 | :----: | :--------: | :----------------------: | :-------------: | :----------------| :---------------------|
 |  1.0   | 31/05/2025 |   Criação do documento   | Natália Rodrigues | Harleny A. | texto revisado |
+| 1.1  | 02/06/2025 | Atualização do Tutorial de como subir a aplicação | Gustavo C. | |
